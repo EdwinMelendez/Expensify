@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/r-11-07-router-refactor.iml" filepath="$PROJECT_DIR$/.idea/r-11-07-router-refactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/expensify.iml" filepath="$PROJECT_DIR$/.idea/expensify.iml" />
     </modules>
   </component>
 </project>

@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add -g @types/jest
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run build:prod
 
 PATH: 
   /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -22,7 +22,8 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "serve": "live-server public/",
-      "build": "webpack",
+      "build:dev": "webpack",
+      "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server --mode development",
       "test": "jest --config=jest.config.json"
     },
@@ -40,6 +41,7 @@ npm manifest:
       "enzyme": "3.0.0",
       "enzyme-adapter-react-16": "1.0.0",
       "enzyme-to-json": "3.0.1",
+      "extract-text-webpack-plugin": "3.0.0",
       "jest": "20.0.4",
       "live-server": "^1.2.0",
       "moment": "2.18.1",
@@ -542,6 +544,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/async/-/async-2.5.0.tgz#843190fd6b7357a0b9e1c956edddd5ec8462b54d"
     dependencies:
       lodash "^4.14.0"
+  
+  async@^2.4.1:
+    version "2.6.1"
+    resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
+    dependencies:
+      lodash "^4.17.10"
   
   asynckit@^0.4.0:
     version "0.4.0"
@@ -3141,6 +3149,15 @@ Lockfile:
       regex-not "^1.0.0"
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
+  
+  extract-text-webpack-plugin@3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.0.tgz#90caa7907bc449f335005e3ac7532b41b00de612"
+    dependencies:
+      async "^2.4.1"
+      loader-utils "^1.1.0"
+      schema-utils "^0.3.0"
+      webpack-sources "^1.0.1"
   
   extsprintf@1.0.2:
     version "1.0.2"
@@ -8780,14 +8797,17 @@ Lockfile:
       yeoman-environment "^2.0.5"
 
 Trace: 
-  Error: Missing list of packages to add to your project.
-      at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:40587:13)
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:116:14
-      at new Promise (<anonymous>)
-      at new F (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:23451:28)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:95:12)
-      at Object.run (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:40599:19)
-      at run (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:89113:20)
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c webpack -p --env production
+  Directory: /Users/DarthVader/Desktop/react projects/expensify-app
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
